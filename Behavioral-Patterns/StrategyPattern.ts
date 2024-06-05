@@ -3,7 +3,6 @@ interface PaymentStrategy {
 }
 
 class CreditCardPayment implements PaymentStrategy {
-  // private name: string;
   private cardNumber: string;
 
   constructor(name: string, cardNumber: string) {
@@ -16,7 +15,6 @@ class CreditCardPayment implements PaymentStrategy {
 }
 
 class PayPalPayment implements PaymentStrategy {
-  // private name
   private email: string;
   
   constructor(email: string) {

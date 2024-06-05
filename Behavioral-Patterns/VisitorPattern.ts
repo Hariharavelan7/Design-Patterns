@@ -48,7 +48,6 @@ class Render implements IVisitor {
   }
 }
 
-// Usage
 const body = new BodyElement();
 body.children.push(new AElement());
 body.children.push(new PElement());
