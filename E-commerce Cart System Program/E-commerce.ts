@@ -47,7 +47,15 @@ class Cart {
   }
 
   removeProduct(productName: string) {
-    this.items.delete(productName);
+    if (productName in cart) {
+      this.items.delete(productName);
+      console.log(`${productName} removed from cart.`);
+      mainMenu()
+    }
+    else{
+      console.log(`${productName} is not present in your cart`);
+      mainMenu()
+    }
   }
 
   viewCart() {
@@ -158,9 +166,12 @@ function mainMenu() {
         break;
       case '4':
         rl.question('Enter product name to remove: ', (productName) => {
+          // if ( === ' ') {
+          //   console.log(`Please add an item to remove`);
+          //   mainMenu()
+          // }
           cart.removeProduct(productName);
-          console.log(`${productName} removed from cart.`);
-          mainMenu();
+          // mainMenu();
         });
         break;
       case '5':
